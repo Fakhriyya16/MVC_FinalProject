@@ -11,6 +11,7 @@ namespace MVC_FinalProject.Data
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<Icon> Icons { get; set; }
         public DbSet<Information> Information { get; set; }
+        public DbSet<About> Abouts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

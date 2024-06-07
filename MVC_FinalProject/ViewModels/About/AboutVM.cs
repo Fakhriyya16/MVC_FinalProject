@@ -1,6 +1,6 @@
-﻿namespace MVC_FinalProject.Models
+﻿namespace MVC_FinalProject.ViewModels.About
 {
-    public class About : BaseEntity
+    public class AboutVM
     {
         public string Heading { get; set; }
         public string Description { get; set; }

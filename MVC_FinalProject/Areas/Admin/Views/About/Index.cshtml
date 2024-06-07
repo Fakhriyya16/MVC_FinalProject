@@ -1,0 +1,47 @@
+﻿@model AboutDetailVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section id="information-table">
+    <div class="container">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Created Date</th>
+                    <th scope="col">Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="about-data">
+                    <th scope="row">@Model.Id</th>
+                    <td><img src="~/assets/img/@Model.Image" style="width:100px;height:100px;" /></td>
+                    <td>@Model.Heading</td>
+                    <td>@TruncateText(Model.Description, 10)</td>
+                    <td>@Model.CreatedDate</td>
+                    <td>
+                        <a type="button" asp-controller="About" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning btn-sm">Edit</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+@functions {
+    public string TruncateText(string text, int maxLength)
+    {
+        if (string.IsNullOrEmpty(text) || text.Length <= maxLength)
+        {
+            return text;
+        }
+        return text.Substring(0, maxLength) + "...";
+    }
+}
+
+
+
