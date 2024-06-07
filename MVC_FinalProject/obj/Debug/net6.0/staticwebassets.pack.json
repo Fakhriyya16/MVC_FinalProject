@@ -517,6 +517,10 @@
       "PackagePath": "staticwebassets\\Admin\\assets\\js\\common-pages.js"
     },
     {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\Admin\\assets\\js\\deleteInfo.js",
+      "PackagePath": "staticwebassets\\Admin\\assets\\js\\deleteInfo.js"
+    },
+    {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\Admin\\assets\\js\\deleteslider.js",
       "PackagePath": "staticwebassets\\Admin\\assets\\js\\deleteslider.js"
     },
@@ -783,6 +787,14 @@
     {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\course-3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\course-3.jpg"
+    },
+    {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\dbfa91e3-f9e5-47a3-8733-d5c9fb1c9878course-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\dbfa91e3-f9e5-47a3-8733-d5c9fb1c9878course-2.jpg"
+    },
+    {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\de81f18a-0398-4f76-b466-abee30eb5a34course-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\de81f18a-0398-4f76-b466-abee30eb5a34course-1.jpg"
     },
     {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\f767c32c-c06b-4325-9f4b-6329768a94aecat-1.jpg",

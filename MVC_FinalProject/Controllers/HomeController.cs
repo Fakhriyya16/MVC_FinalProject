@@ -11,15 +11,19 @@ namespace MVC_FinalProject.Controllers
     public class HomeController : Controller
     {
         private readonly ISliderService _sliderService;
-        public HomeController(ISliderService sliderService)
+        private readonly IInformationService _informationService;
+        public HomeController(ISliderService sliderService,
+                              IInformationService informationService)
         {
             _sliderService = sliderService;
+            _informationService = informationService;
         }
         public async Task<IActionResult> Index()
         {
             HomeVM model = new()
             {
                 Sliders = await _sliderService.GetAllSlidersVM(),
+                Information = await _informationService.GetAllInfoVM(),
             };
             return View(model);
         }

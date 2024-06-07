@@ -236,6 +236,7 @@ D:\VS\MVC_FinalProject\MVC_FinalProject\obj\Debug\net6.0\MVC_FinalProject.csproj
 D:\VS\MVC_FinalProject\MVC_FinalProject\obj\Debug\net6.0\MVC_FinalProject.MvcApplicationPartsAssemblyInfo.cache
 D:\VS\MVC_FinalProject\MVC_FinalProject\obj\Debug\net6.0\MVC_FinalProject.RazorAssemblyInfo.cache
 D:\VS\MVC_FinalProject\MVC_FinalProject\obj\Debug\net6.0\MVC_FinalProject.RazorAssemblyInfo.cs
+D:\VS\MVC_FinalProject\MVC_FinalProject\obj\Debug\net6.0\MVC_FinalProject.sourcelink.json
 D:\VS\MVC_FinalProject\MVC_FinalProject\obj\Debug\net6.0\staticwebassets.build.json
 D:\VS\MVC_FinalProject\MVC_FinalProject\obj\Debug\net6.0\staticwebassets.development.json
 D:\VS\MVC_FinalProject\MVC_FinalProject\obj\Debug\net6.0\staticwebassets\msbuild.MVC_FinalProject.Microsoft.AspNetCore.StaticWebAssets.props

@@ -139,5 +139,26 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
 
             return View(model);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int? id, SliderEditVM request)
+        {
+            if (id is null)
+            {
+                return BadRequest();
+            }
+
+            var slider = await _sliderService.GetById((int)id);
+
+            if (slider is null)
+            {
+                return NotFound();
+            }
+
+            await _sliderService.Edit(slider, request);
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

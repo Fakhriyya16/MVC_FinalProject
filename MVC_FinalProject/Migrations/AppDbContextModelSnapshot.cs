@@ -223,6 +223,52 @@ namespace MVC_FinalProject.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("MVC_FinalProject.Models.Icon", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("ClassName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Icons");
+                });
+
+            modelBuilder.Entity("MVC_FinalProject.Models.Information", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("IconId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("SoftDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IconId");
+
+                    b.ToTable("Information");
+                });
+
             modelBuilder.Entity("MVC_FinalProject.Models.Slider", b =>
                 {
                     b.Property<int>("Id")
@@ -300,6 +346,22 @@ namespace MVC_FinalProject.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("MVC_FinalProject.Models.Information", b =>
+                {
+                    b.HasOne("MVC_FinalProject.Models.Icon", "Icon")
+                        .WithMany("Information")
+                        .HasForeignKey("IconId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Icon");
+                });
+
+            modelBuilder.Entity("MVC_FinalProject.Models.Icon", b =>
+                {
+                    b.Navigation("Information");
                 });
 #pragma warning restore 612, 618
         }

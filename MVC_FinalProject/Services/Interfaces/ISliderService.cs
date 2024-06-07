@@ -11,5 +11,6 @@ namespace MVC_FinalProject.Services.Interfaces
         Task<bool> ExistingSlider(string heading);
         Task<Slider> GetById(int id);
         Task Delete(Slider slider);
+        Task Edit(Slider slider, SliderEditVM editedSlider);
     }
 }

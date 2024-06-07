@@ -9,9 +9,13 @@ namespace MVC_FinalProject.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<Slider> Sliders { get; set; }
+        public DbSet<Icon> Icons { get; set; }
+        public DbSet<Information> Information { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<Slider>().HasQueryFilter(m => !m.SoftDeleted);
+            builder.Entity<Information>().HasQueryFilter(m => !m.SoftDeleted);
             base.OnModelCreating(builder);
         }
     }

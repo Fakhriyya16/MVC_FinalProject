@@ -1,0 +1,45 @@
+﻿@model List<InformationTableVM>
+@{
+    ViewData["Title"] = "Information";
+}
+
+<section id="information-table">
+    <div class="container">
+        <a asp-controller="Information" asp-action="Create" type="button" class="btn btn-success">Create</a>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Icon</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Created Date</th>
+                    <th scope="col">Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="info-data">
+                        <th scope="row">@item.Id</th>
+                        <td><i class="fa fa-3x @item.IconName text-primary mb-4"></i></td>
+                        <td>@item.Title</td>
+                        <td>@item.Description</td>
+                        <td>@item.CreatedDate</td>
+                        <td>
+                            <a type="button" asp-controller="Information" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Edit</a>
+                            <form method="post" asp-controller="Information" asp-action="Delete" asp-route-id="@item.Id">
+                                <button data-id="@item.Id" class="btn btn-danger btn-sm delete-info-btn">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
+
+@section js {
+    <script src="~/Admin/assets/js/deleteInfo.js"></script>
+}
+

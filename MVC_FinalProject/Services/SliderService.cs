@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.Build.Execution;
+using Microsoft.EntityFrameworkCore;
 using MVC_FinalProject.Data;
 using MVC_FinalProject.Models;
 using MVC_FinalProject.Services.Interfaces;
@@ -9,9 +11,11 @@ namespace MVC_FinalProject.Services
     public class SliderService : ISliderService
     {
         private readonly AppDbContext _context;
-        public SliderService(AppDbContext context)
+        private readonly IWebHostEnvironment _env;
+        public SliderService(AppDbContext context, IWebHostEnvironment env)
         {
             _context = context;
+            _env = env;
         }
 
         public async Task Create(Slider slider)
@@ -23,6 +27,36 @@ namespace MVC_FinalProject.Services
         public async Task Delete(Slider slider)
         {
             slider.SoftDeleted = true;
+            _context.Sliders.Update(slider);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task Edit(Slider slider, SliderEditVM request)
+        {
+            slider.Heading = request.Heading;
+            slider.Description = request.Description;
+            var existImage = slider.Image;
+
+            if (request.NewImage is not null)
+            {
+                string path = Path.Combine(_env.WebRootPath, "assets/img", existImage);
+
+                if (System.IO.File.Exists(path))
+                {
+                    System.IO.File.Delete(path);
+                }
+
+                string fileName = Guid.NewGuid().ToString() + request.NewImage.FileName;
+
+                path = Path.Combine(_env.WebRootPath, "assets/img", fileName);
+
+                using (FileStream stream = new(path, FileMode.Create))
+                {
+                    await request.NewImage.CopyToAsync(stream);
+                }
+                slider.Image = fileName;
+            }
+
             _context.Sliders.Update(slider);
             await _context.SaveChangesAsync();
         }
@@ -50,7 +84,7 @@ namespace MVC_FinalProject.Services
 
         public async Task<List<SliderVM>> GetAllSlidersVM()
         {
-            var result = await _context.Sliders.ToListAsync();
+            var result = await _context.Sliders.Where(m=>!m.SoftDeleted).ToListAsync();
            
             List<SliderVM> sliders = result.Select(m => new SliderVM
             {
