@@ -105,6 +105,11 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
                 return NotFound();
             }
 
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
             await _informationService.Edit(info, request);
 
             return RedirectToAction(nameof(Index));

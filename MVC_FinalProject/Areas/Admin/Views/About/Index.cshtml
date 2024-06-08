@@ -3,8 +3,12 @@
     ViewData["Title"] = "Index";
 }
 
-<section id="information-table">
+<section id="about-table">
     <div class="container">
+        @if(ViewBag.AboutCount == 0)
+        {
+            <a asp-controller="About" asp-action="Create" type="button" class="btn btn-success">Create</a>
+        }
         <table class="table">
             <thead class="thead-dark">
                 <tr>
@@ -25,6 +29,9 @@
                     <td>@Model.CreatedDate</td>
                     <td>
                         <a type="button" asp-controller="About" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning btn-sm">Edit</a>
+                        <form method="post" asp-controller="About" asp-action="Delete" asp-route-id="@Model.Id">
+                            <button data-id="@Model.Id" class="btn btn-danger btn-sm delete-about-btn">Delete</button>
+                        </form>
                     </td>
                 </tr>
             </tbody>
@@ -43,5 +50,8 @@
     }
 }
 
+@section js {
+    <script src="~/Admin/assets/js/delete.js"></script>
+}
 
 

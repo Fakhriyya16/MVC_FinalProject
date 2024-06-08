@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3INXNZorKyWu8LWfJGk9/OkQlY66coVZu3ib+oKlUFA=",
+  "Hash": "R2gr6uid38CgZVbeY36a/uACIVm5qLsJ3MqrjuSCX1M=",
   "Source": "MVC_FinalProject",
   "BasePath": "_content/MVC_FinalProject",
   "Mode": "Default",
@@ -2487,12 +2487,12 @@
       "OriginalItemSpec": "wwwroot\\Admin\\assets\\js\\common-pages.js"
     },
     {
-      "Identity": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\Admin\\assets\\js\\deleteInfo.js",
+      "Identity": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\Admin\\assets\\js\\delete.js",
       "SourceId": "MVC_FinalProject",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\",
       "BasePath": "_content/MVC_FinalProject",
-      "RelativePath": "Admin/assets/js/deleteInfo.js",
+      "RelativePath": "Admin/assets/js/delete.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2503,26 +2503,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Admin\\assets\\js\\deleteInfo.js"
-    },
-    {
-      "Identity": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\Admin\\assets\\js\\deleteslider.js",
-      "SourceId": "MVC_FinalProject",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\",
-      "BasePath": "_content/MVC_FinalProject",
-      "RelativePath": "Admin/assets/js/deleteslider.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Admin\\assets\\js\\deleteslider.js"
+      "OriginalItemSpec": "wwwroot\\Admin\\assets\\js\\delete.js"
     },
     {
       "Identity": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\Admin\\assets\\js\\jquery.mCustomScrollbar.concat.min.js",
@@ -3456,6 +3437,25 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\style.css"
     },
     {
+      "Identity": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\109999da-e831-45f6-8732-d0357e5b2115cat-4.jpg",
+      "SourceId": "MVC_FinalProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\",
+      "BasePath": "_content/MVC_FinalProject",
+      "RelativePath": "assets/img/109999da-e831-45f6-8732-d0357e5b2115cat-4.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\109999da-e831-45f6-8732-d0357e5b2115cat-4.jpg"
+    },
+    {
       "Identity": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\13b2c6f6-88fc-400e-954a-b90604453744carousel-1.jpg",
       "SourceId": "MVC_FinalProject",
       "SourceType": "Discovered",
@@ -3475,6 +3475,44 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\13b2c6f6-88fc-400e-954a-b90604453744carousel-1.jpg"
     },
     {
+      "Identity": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\190f3346-5ed3-4d95-a876-f9d411f36c9fabout.jpg",
+      "SourceId": "MVC_FinalProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\",
+      "BasePath": "_content/MVC_FinalProject",
+      "RelativePath": "assets/img/190f3346-5ed3-4d95-a876-f9d411f36c9fabout.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\190f3346-5ed3-4d95-a876-f9d411f36c9fabout.jpg"
+    },
+    {
+      "Identity": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\3f9ad543-333b-4a1f-bd2d-d44223e33176cat-2.jpg",
+      "SourceId": "MVC_FinalProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\",
+      "BasePath": "_content/MVC_FinalProject",
+      "RelativePath": "assets/img/3f9ad543-333b-4a1f-bd2d-d44223e33176cat-2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\3f9ad543-333b-4a1f-bd2d-d44223e33176cat-2.jpg"
+    },
+    {
       "Identity": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\456fbae7-4a5f-424b-b591-2f572d61583bcarousel-1.jpg",
       "SourceId": "MVC_FinalProject",
       "SourceType": "Discovered",
@@ -3492,6 +3530,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\456fbae7-4a5f-424b-b591-2f572d61583bcarousel-1.jpg"
+    },
+    {
+      "Identity": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\4b623583-4b4c-43fc-b126-0f159271dd21cat-3.jpg",
+      "SourceId": "MVC_FinalProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\",
+      "BasePath": "_content/MVC_FinalProject",
+      "RelativePath": "assets/img/4b623583-4b4c-43fc-b126-0f159271dd21cat-3.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\4b623583-4b4c-43fc-b126-0f159271dd21cat-3.jpg"
     },
     {
       "Identity": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\68e10f2b-8d58-40ff-bf90-bdef988a564acat-1.jpg",
@@ -3570,12 +3627,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\a1df74be-77f8-491d-8eae-6f1eb6952026cat-1.jpg"
     },
     {
-      "Identity": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\about.jpg",
+      "Identity": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\bf529d0c-5261-4f3f-8b61-c6495ea7cb98about.jpg",
       "SourceId": "MVC_FinalProject",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\",
       "BasePath": "_content/MVC_FinalProject",
-      "RelativePath": "assets/img/about.jpg",
+      "RelativePath": "assets/img/bf529d0c-5261-4f3f-8b61-c6495ea7cb98about.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -3586,7 +3643,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\about.jpg"
+      "OriginalItemSpec": "wwwroot\\assets\\img\\bf529d0c-5261-4f3f-8b61-c6495ea7cb98about.jpg"
     },
     {
       "Identity": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\c0985df4-8b32-46f3-ab6e-1ad1c0d28e40cat-1.jpg",

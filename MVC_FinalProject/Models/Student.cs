@@ -5,6 +5,5 @@
         public string FullName { get; set; }
         public string Image { get; set; }
         public string Bio { get; set; }
-        public string Email { get; set; }
     }
 }

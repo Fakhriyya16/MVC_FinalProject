@@ -1,4 +1,5 @@
-﻿using MVC_FinalProject.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using MVC_FinalProject.Models;
 using MVC_FinalProject.ViewModels.About;
 
 namespace MVC_FinalProject.Services.Interfaces
@@ -9,5 +10,8 @@ namespace MVC_FinalProject.Services.Interfaces
         Task<AboutDetailVM> GetAllForDetailVM();
         Task Edit(About about, AboutEditVM edited);
         Task<About> GetById(int id);
+        Task Create(About about);
+        Task<int> GetCount();
+        Task Delete(About about);
     }
 }

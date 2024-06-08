@@ -1,0 +1,44 @@
+﻿@model List<CategoryTableVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section id="category-table">
+    <div class="container">
+        <a asp-controller="Category" asp-action="Create" type="button" class="btn btn-success">Create</a>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Created Date</th>
+                    <th scope="col">Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="category-data">
+                        <th scope="row">@item.Id</th>
+                        <td><img src="~/assets/img/@item.Image" style="width:100px;height:100px;" /></td>
+                        <td>@item.Name</td>
+                        <td>@item.CreatedDate</td>
+                        <td>
+                            <a type="button" asp-controller="Category" asp-action="Detail" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Detail</a>
+                            <a type="button" asp-controller="Category" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Edit</a>
+                            <form method="post" asp-controller="Category" asp-action="Delete" asp-route-id="@item.Id">
+                                <button data-id="@item.Id" class="btn btn-danger btn-sm delete-category-btn">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
+
+@section js {
+    <script src="~/Admin/assets/js/delete.js"></script>
+}
+

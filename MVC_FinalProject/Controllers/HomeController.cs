@@ -13,13 +13,17 @@ namespace MVC_FinalProject.Controllers
         private readonly ISliderService _sliderService;
         private readonly IInformationService _informationService;
         public readonly IAboutService _aboutService;
+        private readonly ICategoryService _categoryService;
         public HomeController(ISliderService sliderService,
                               IInformationService informationService,
-                              IAboutService aboutService)
+                              IAboutService aboutService,
+                              ICategoryService categoryService)
         {
             _sliderService = sliderService;
             _informationService = informationService;
             _aboutService = aboutService;
+            _categoryService = categoryService;
+
         }
         public async Task<IActionResult> Index()
         {
@@ -28,6 +32,7 @@ namespace MVC_FinalProject.Controllers
                 Sliders = await _sliderService.GetAllSlidersVM(),
                 Information = await _informationService.GetAllInfoVM(),
                 About = await _aboutService.GetAllVM(),
+                Categories = await _categoryService.GetAllVM(),
             };
             return View(model);
         }

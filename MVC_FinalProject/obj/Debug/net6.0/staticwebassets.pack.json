@@ -517,12 +517,8 @@
       "PackagePath": "staticwebassets\\Admin\\assets\\js\\common-pages.js"
     },
     {
-      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\Admin\\assets\\js\\deleteInfo.js",
-      "PackagePath": "staticwebassets\\Admin\\assets\\js\\deleteInfo.js"
-    },
-    {
-      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\Admin\\assets\\js\\deleteslider.js",
-      "PackagePath": "staticwebassets\\Admin\\assets\\js\\deleteslider.js"
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\Admin\\assets\\js\\delete.js",
+      "PackagePath": "staticwebassets\\Admin\\assets\\js\\delete.js"
     },
     {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\Admin\\assets\\js\\jquery-slimscroll\\jquery.slimscroll.js",
@@ -721,12 +717,28 @@
       "PackagePath": "staticwebassets\\assets\\css\\style.css"
     },
     {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\109999da-e831-45f6-8732-d0357e5b2115cat-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\109999da-e831-45f6-8732-d0357e5b2115cat-4.jpg"
+    },
+    {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\13b2c6f6-88fc-400e-954a-b90604453744carousel-1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\13b2c6f6-88fc-400e-954a-b90604453744carousel-1.jpg"
     },
     {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\190f3346-5ed3-4d95-a876-f9d411f36c9fabout.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\190f3346-5ed3-4d95-a876-f9d411f36c9fabout.jpg"
+    },
+    {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\3f9ad543-333b-4a1f-bd2d-d44223e33176cat-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\3f9ad543-333b-4a1f-bd2d-d44223e33176cat-2.jpg"
+    },
+    {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\456fbae7-4a5f-424b-b591-2f572d61583bcarousel-1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\456fbae7-4a5f-424b-b591-2f572d61583bcarousel-1.jpg"
+    },
+    {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\4b623583-4b4c-43fc-b126-0f159271dd21cat-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\4b623583-4b4c-43fc-b126-0f159271dd21cat-3.jpg"
     },
     {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\68e10f2b-8d58-40ff-bf90-bdef988a564acat-1.jpg",
@@ -745,8 +757,8 @@
       "PackagePath": "staticwebassets\\assets\\img\\a1df74be-77f8-491d-8eae-6f1eb6952026cat-1.jpg"
     },
     {
-      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\about.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\about.jpg"
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\bf529d0c-5261-4f3f-8b61-c6495ea7cb98about.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\bf529d0c-5261-4f3f-8b61-c6495ea7cb98about.jpg"
     },
     {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\c0985df4-8b32-46f3-ab6e-1ad1c0d28e40cat-1.jpg",

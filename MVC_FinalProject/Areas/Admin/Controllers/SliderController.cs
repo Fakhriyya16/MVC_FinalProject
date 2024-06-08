@@ -156,6 +156,11 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
                 return NotFound();
             }
 
+            if(!ModelState.IsValid)
+            {
+                return View();
+            }
+
             await _sliderService.Edit(slider, request);
 
             return RedirectToAction(nameof(Index));

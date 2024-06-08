@@ -17,6 +17,18 @@ namespace MVC_FinalProject.Services
 
         }
 
+        public async Task Create(About about)
+        {
+            await _appDbContext.Abouts.AddAsync(about);
+            await _appDbContext.SaveChangesAsync();
+        }
+
+        public async Task Delete(About about)
+        {
+            _appDbContext.Abouts.Remove(about);
+            await _appDbContext.SaveChangesAsync();
+        }
+
         public async Task Edit(About about, AboutEditVM edited)
         {
             about.Heading = edited.Heading;
@@ -78,6 +90,11 @@ namespace MVC_FinalProject.Services
         public async Task<About> GetById(int id)
         {
             return await _appDbContext.Abouts.FirstOrDefaultAsync();
+        }
+
+        public async Task<int> GetCount()
+        {
+            return await _appDbContext.Abouts.CountAsync();
         }
     }
 }
