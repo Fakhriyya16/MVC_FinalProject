@@ -13,6 +13,7 @@ namespace MVC_FinalProject.ViewModels.Courses
         [Required]
         public string Price { get; set; }
         [Required]
+        [Range(1, 5, ErrorMessage = "Rating must be between 1 and 5.")]
         public int Rating { get; set; }
         [Required]
         public int InstructorId { get; set; }

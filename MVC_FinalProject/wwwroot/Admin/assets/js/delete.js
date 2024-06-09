@@ -77,4 +77,17 @@
             },
         });
     });
+    $(document).on("click", "#student-table .delete-student-btn", function (event) {
+        event.preventDefault();
+        let button = $(this);
+        let id = parseInt(button.attr("data-id"));
+
+        $.ajax({
+            type: "POST",
+            url: `student/delete?id=${id}`,
+            success: function (response) {
+                button.closest('.student-data').remove();
+            },
+        });
+    });
 });

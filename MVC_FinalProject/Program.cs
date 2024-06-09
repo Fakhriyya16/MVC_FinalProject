@@ -25,7 +25,7 @@ builder.Services.AddScoped<IAboutService, AboutService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ICourseService, CourseService>();
 builder.Services.AddScoped<IInstructorService, InstructorService>();
-
+builder.Services.AddScoped<IStudentService, StudentService>();
 
 var app = builder.Build();
 
