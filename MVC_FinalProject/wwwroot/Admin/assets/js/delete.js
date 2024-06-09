@@ -64,4 +64,17 @@
             },
         });
     });
+    $(document).on("click", "#instructor-table .delete-instructor-btn", function (event) {
+        event.preventDefault();
+        let button = $(this);
+        let id = parseInt(button.attr("data-id"));
+
+        $.ajax({
+            type: "POST",
+            url: `instructor/delete?id=${id}`,
+            success: function (response) {
+                button.closest('.instructor-data').remove();
+            },
+        });
+    });
 });

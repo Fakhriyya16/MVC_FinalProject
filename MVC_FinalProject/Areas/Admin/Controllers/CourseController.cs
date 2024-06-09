@@ -91,7 +91,7 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
                 CategoryId = request.CategoryId,
                 Price = decimal.Parse(request.Price.Replace(".", ",")),
                 Rating = request.Rating,
-                InstructorId = request.InstructorId,
+                InstructorId  = request.InstructorId,
                 StartDate = request.StartDate,
                 EndDate = request.EndDate,
             };
