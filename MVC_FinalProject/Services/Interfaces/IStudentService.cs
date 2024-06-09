@@ -10,5 +10,6 @@ namespace MVC_FinalProject.Services.Interfaces
         Task Create(Student student, List<int> courses);
         Task Edit(Student student, StudentEditVM request);
         Task Delete(Student student);
+        Task<List<StudentVM>> GetAllVM();
     }
 }

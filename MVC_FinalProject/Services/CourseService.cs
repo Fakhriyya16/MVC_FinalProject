@@ -149,5 +149,27 @@ namespace MVC_FinalProject.Services
 
             await _context.SaveChangesAsync();
         }
+
+        public async Task<List<CourseVM>> GetAllVM()
+        {
+            var data = await _context.Courses.Include(m => m.Instructor)
+                                             .Include(m => m.CourseImages)
+                                             .Include(m => m.CourseStudents)
+                                             .ThenInclude(m => m.Student).ToListAsync();
+
+            List<CourseVM> result = data.Select(m => new CourseVM
+            {
+                Name = m.Name,
+                Image = m.CourseImages.Where(m => m.IsMain).FirstOrDefault().Name,
+                Price = m.Price.ToString(m.Price % 1 == 0 ? "0" : "0.00"),
+                Rating = m.Rating,
+                Instructor = m.Instructor.FullName,
+                Duration = ((m.EndDate.Year - m.StartDate.Year) * 12) + m.EndDate.Month - m.StartDate.Month,
+                StudentCount = m.CourseStudents.Count
+            }).ToList();
+
+
+            return result;
+        }
     }
 }

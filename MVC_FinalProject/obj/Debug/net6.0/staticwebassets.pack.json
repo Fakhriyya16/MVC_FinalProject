@@ -721,8 +721,16 @@
       "PackagePath": "staticwebassets\\assets\\css\\style.css"
     },
     {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\029314ad-7765-4ad7-b66c-3dbcf21db133carousel-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\029314ad-7765-4ad7-b66c-3dbcf21db133carousel-1.jpg"
+    },
+    {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\0a9dc5ae-7af3-4d3d-8ad4-9d00dbc4eee4course-3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\0a9dc5ae-7af3-4d3d-8ad4-9d00dbc4eee4course-3.jpg"
+    },
+    {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\0d2ec477-e0fb-4c6a-aaf8-9ed8545b5648about.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\0d2ec477-e0fb-4c6a-aaf8-9ed8545b5648about.jpg"
     },
     {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\0da39967-2ea4-4604-a45c-f3cc18b55a1fcat-1.jpg",

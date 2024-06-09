@@ -91,6 +91,19 @@ namespace MVC_FinalProject.Services
             return studentTableVM;
         }
 
+        public async Task<List<StudentVM>> GetAllVM()
+        {
+            var data = await _context.Students.ToListAsync();
+            List<StudentVM> result = data.Select(m => new StudentVM
+            {
+                FullName = m.FullName,
+                Bio = m.Bio,
+                Image = m.Image,
+            }).ToList();
+
+            return result;
+        }
+
         public async Task<Student> GetById(int id)
         {
             return await _context.Students.Include(m=>m.CourseStudents).ThenInclude(m=>m.Course).FirstOrDefaultAsync(m=>m.Id == id);

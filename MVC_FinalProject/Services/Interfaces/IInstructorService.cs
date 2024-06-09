@@ -12,5 +12,6 @@ namespace MVC_FinalProject.Services.Interfaces
         Task<Instructor> GetById(int id);
         Task Edit(Instructor instructor, InstructorEditVM request);
         Task Delete(Instructor instructor);
+        Task<List<InstructorVM>> GetAllVM();
     }
 }

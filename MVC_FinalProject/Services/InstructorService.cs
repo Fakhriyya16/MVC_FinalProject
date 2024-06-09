@@ -3,6 +3,7 @@ using MVC_FinalProject.Data;
 using MVC_FinalProject.Models;
 using MVC_FinalProject.Services.Interfaces;
 using MVC_FinalProject.ViewModels.Categories;
+using MVC_FinalProject.ViewModels.Courses;
 using MVC_FinalProject.ViewModels.Instructors;
 
 namespace MVC_FinalProject.Services
@@ -11,11 +12,12 @@ namespace MVC_FinalProject.Services
     {
         private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _env;
-        public InstructorService(AppDbContext context, IWebHostEnvironment env)
+        private readonly ISocialService _socialService;
+        public InstructorService(AppDbContext context, IWebHostEnvironment env, ISocialService socialService)
         {
             _context = context;
             _env = env;
-
+            _socialService = socialService;
         }
 
         public async Task Create(Instructor instructor)
@@ -58,6 +60,10 @@ namespace MVC_FinalProject.Services
                 instructor.Image = fileName;
             }
 
+            await _socialService.UpdateSocialLink(instructor, "Instagram", request.Instagram);
+            await _socialService.UpdateSocialLink(instructor, "Facebook", request.Facebook);
+            await _socialService.UpdateSocialLink(instructor, "Twitter", request.Twitter);
+
             _context.Instructors.Update(instructor);
             await _context.SaveChangesAsync();
         }
@@ -80,6 +86,20 @@ namespace MVC_FinalProject.Services
             }).ToList();
 
             return vm;
+        }
+
+        public async Task<List<InstructorVM>> GetAllVM()
+        {
+            var data = await _context.Instructors.ToListAsync();
+
+            List<InstructorVM> result = data.Select(m => new InstructorVM
+            {
+                Name = m.FullName,
+                Image = m.Image,
+                Position = m.Position,
+            }).ToList();
+
+            return result;
         }
 
         public async Task<Instructor> GetById(int id)

@@ -1,11 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using MVC_FinalProject.Data;
 using MVC_FinalProject.Models;
-using MVC_FinalProject.Services;
 using MVC_FinalProject.Services.Interfaces;
-using MVC_FinalProject.ViewModels.Categories;
 using MVC_FinalProject.ViewModels.Instructors;
 
 namespace MVC_FinalProject.Areas.Admin.Controllers
@@ -16,14 +12,16 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         private readonly IInstructorService _instructorService;
         private readonly AppDbContext _appDbContext;
         private readonly IWebHostEnvironment _env;
+        private readonly ISocialService _socialService;
         public InstructorController(IInstructorService instructorService,
                                     AppDbContext appDbContext,
-                                    IWebHostEnvironment env)
+                                    IWebHostEnvironment env,
+                                    ISocialService socialService)
         {
             _instructorService = instructorService;
             _appDbContext = appDbContext;
             _env = env;
-
+            _socialService = socialService;
         }
         public async Task<IActionResult> Index()
         {
@@ -33,11 +31,11 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Detail(int? id)
         {
-            if(id is null)
+            if (id is null)
             {
                 return BadRequest();
             }
-            var instructor = await _instructorService.GetInstructorDetailVM((int) id);
+            var instructor = await _instructorService.GetInstructorDetailVM((int)id);
             if (instructor is null)
             {
                 return NotFound();
@@ -89,6 +87,9 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
                 Email = request.Email,
                 Position = request.Position,
             };
+            await _socialService.AddSocialLink(instructor, "Instagram", request.Instagram);
+            await _socialService.AddSocialLink(instructor, "Facebook", request.Facebook);
+            await _socialService.AddSocialLink(instructor, "Twitter", request.Twitter);
 
             await _instructorService.Create(instructor);
             return RedirectToAction("Index");
@@ -109,11 +110,19 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
                 return NotFound();
             }
 
+            var instructorSocials = instructor?.InstructorSocials?.ToDictionary(
+                isocial => isocial.Social.Name,
+                isocial => isocial.SocialURL
+            ) ?? new Dictionary<string, string>();
+
             InstructorEditVM vm = new()
             {
-                FullName=instructor.FullName,
-                Email=instructor.Email,
+                FullName = instructor.FullName,
+                Email = instructor.Email,
                 Position = instructor.Position,
+                Instagram = instructorSocials.ContainsKey("Instagram") ? instructorSocials["Instagram"] : null,
+                Facebook = instructorSocials.ContainsKey("Facebook") ? instructorSocials["Facebook"] : null,
+                Twitter = instructorSocials.ContainsKey("Twitter") ? instructorSocials["Twitter"] : null
             };
 
             return View(vm);

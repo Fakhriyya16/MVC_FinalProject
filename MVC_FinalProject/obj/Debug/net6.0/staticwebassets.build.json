@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4PwFjtF4xqTjc5eFjETU4tQHBzWG4a7zi4LvUEQzRLY=",
+  "Hash": "g2QvgL2bpPoA4woUQL04Q4uV+4go0UT3U9TZgN0dMkA=",
   "Source": "MVC_FinalProject",
   "BasePath": "_content/MVC_FinalProject",
   "Mode": "Default",
@@ -3456,6 +3456,25 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\style.css"
     },
     {
+      "Identity": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\029314ad-7765-4ad7-b66c-3dbcf21db133carousel-1.jpg",
+      "SourceId": "MVC_FinalProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\",
+      "BasePath": "_content/MVC_FinalProject",
+      "RelativePath": "assets/img/029314ad-7765-4ad7-b66c-3dbcf21db133carousel-1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\029314ad-7765-4ad7-b66c-3dbcf21db133carousel-1.jpg"
+    },
+    {
       "Identity": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\0a9dc5ae-7af3-4d3d-8ad4-9d00dbc4eee4course-3.jpg",
       "SourceId": "MVC_FinalProject",
       "SourceType": "Discovered",
@@ -3473,6 +3492,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\0a9dc5ae-7af3-4d3d-8ad4-9d00dbc4eee4course-3.jpg"
+    },
+    {
+      "Identity": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\0d2ec477-e0fb-4c6a-aaf8-9ed8545b5648about.jpg",
+      "SourceId": "MVC_FinalProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\",
+      "BasePath": "_content/MVC_FinalProject",
+      "RelativePath": "assets/img/0d2ec477-e0fb-4c6a-aaf8-9ed8545b5648about.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\0d2ec477-e0fb-4c6a-aaf8-9ed8545b5648about.jpg"
     },
     {
       "Identity": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\0da39967-2ea4-4604-a45c-f3cc18b55a1fcat-1.jpg",

@@ -11,5 +11,11 @@ namespace MVC_FinalProject.ViewModels.Instructors
         [Required]
         public string Position { get; set; }
         public IFormFile NewImage { get; set; }
+
+        public string Instagram { get; set; }
+
+        public string Facebook { get; set; }
+
+        public string Twitter { get; set; }
     }
 }

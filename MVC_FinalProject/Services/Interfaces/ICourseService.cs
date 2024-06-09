@@ -16,5 +16,6 @@ namespace MVC_FinalProject.Services.Interfaces
         Task<Course> GetByIdWithImagesAsync(int id);
         Task UpdateImages(Course course, CourseImage image);
         Task Edit(Course course, CourseEditVM request);
+        Task<List<CourseVM>> GetAllVM();
     }
 }

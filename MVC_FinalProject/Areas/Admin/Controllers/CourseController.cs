@@ -94,6 +94,7 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
                 InstructorId  = request.InstructorId,
                 StartDate = request.StartDate,
                 EndDate = request.EndDate,
+                CreatedDate = DateTime.Now,
             };
 
             await _courseService.Create(course);
@@ -163,7 +164,7 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
                 CategoryId = course.CategoryId,
                 InstructorId = course.InstructorId,
                 Images = course.CourseImages.ToList(),
-                Price = course.Price.ToString(course.Price % 1 == 0 ? "0" : "0.00"),
+                Price = course.Price.ToString(course.Price % 1 == 0 ? "0" : "0,00"),
                 Rating = course.Rating,
                 StartDate = course.StartDate,
                 EndDate = course.EndDate,
@@ -197,7 +198,7 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
             {
                 return View();
             }
-
+            request.Images = course.CourseImages.ToList();
             await _courseService.Edit(course, request);
             return RedirectToAction(nameof(Index));
         }
