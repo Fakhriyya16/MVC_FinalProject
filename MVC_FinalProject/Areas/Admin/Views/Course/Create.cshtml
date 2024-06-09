@@ -1,0 +1,50 @@
+﻿@model CourseCreateVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-5">
+    <form class="forms-sample" method="post" asp-action="Create" enctype="multipart/form-data">
+        <div class="form-group">
+            <label class="float-label">Name</label>
+            <input asp-for="Name" class="form-control">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="float-label">Image</label>
+            <input asp-for="Images" multiple accept="image/*" class="form-control">
+            <span asp-validation-for="Images" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="float-label">Category</label>
+            <select class="form-control" asp-for="CategoryId" asp-items="@ViewBag.Categories"></select>
+        </div>
+        <div class="form-group">
+            <label class="float-label">Price</label>
+            <input asp-for="Price" type="number" step="any" class="form-control">
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="float-label">Rating</label>
+            <input asp-for="Rating" type="number" class="form-control">
+            <span asp-validation-for="Rating" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="float-label">Instructor</label>
+            <select class="form-control" asp-for="InstructorId" asp-items="@ViewBag.Instructors"></select>
+        </div>
+        <div class="form-group">
+            <label>Start Date:</label>
+            <input type="date" asp-for="StartDate" name="startDate">
+            <span asp-validation-for="StartDate" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label>End Date:</label>
+            <input type="date" asp-for="EndDate" name="startDate">
+            <span asp-validation-for="EndDate" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+        <a class="btn btn-light" asp-action="Index">Cancel</a>
+    </form>
+</div>
+

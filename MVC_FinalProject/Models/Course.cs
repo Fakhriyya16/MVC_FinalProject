@@ -9,9 +9,9 @@
         public decimal Price { get; set; }
         public int Rating { get; set; }
         public DateTime StartDate { get; set; }
-        public DateTime EndTime { get; set; }
+        public DateTime EndDate { get; set; }
         public int InstructorId { get; set; }
         public Instructor Instructor { get; set; }
-        
+        public ICollection<CourseStudent> CourseStudents { get; set; }
     }
 }

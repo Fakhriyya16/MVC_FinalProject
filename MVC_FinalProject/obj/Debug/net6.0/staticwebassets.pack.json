@@ -521,6 +521,10 @@
       "PackagePath": "staticwebassets\\Admin\\assets\\js\\delete.js"
     },
     {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\Admin\\assets\\js\\edit.js",
+      "PackagePath": "staticwebassets\\Admin\\assets\\js\\edit.js"
+    },
+    {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\Admin\\assets\\js\\jquery-slimscroll\\jquery.slimscroll.js",
       "PackagePath": "staticwebassets\\Admin\\assets\\js\\jquery-slimscroll\\jquery.slimscroll.js"
     },
@@ -729,6 +733,18 @@
       "PackagePath": "staticwebassets\\assets\\img\\190f3346-5ed3-4d95-a876-f9d411f36c9fabout.jpg"
     },
     {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\270f6f29-2278-4b30-b268-93dda39e3cd8cat-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\270f6f29-2278-4b30-b268-93dda39e3cd8cat-1.jpg"
+    },
+    {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\347dc9db-5c43-4daf-b6b7-3e1c6aa8c988about.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\347dc9db-5c43-4daf-b6b7-3e1c6aa8c988about.jpg"
+    },
+    {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\3d18beac-aa60-4eba-bd40-50dd0c6e418dcourse-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\3d18beac-aa60-4eba-bd40-50dd0c6e418dcourse-2.jpg"
+    },
+    {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\3f9ad543-333b-4a1f-bd2d-d44223e33176cat-2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\3f9ad543-333b-4a1f-bd2d-d44223e33176cat-2.jpg"
     },
@@ -737,12 +753,20 @@
       "PackagePath": "staticwebassets\\assets\\img\\456fbae7-4a5f-424b-b591-2f572d61583bcarousel-1.jpg"
     },
     {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\48ee34b1-9487-49f1-b48a-a3e770b733e9course-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\48ee34b1-9487-49f1-b48a-a3e770b733e9course-1.jpg"
+    },
+    {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\4b623583-4b4c-43fc-b126-0f159271dd21cat-3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\4b623583-4b4c-43fc-b126-0f159271dd21cat-3.jpg"
     },
     {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\68e10f2b-8d58-40ff-bf90-bdef988a564acat-1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\68e10f2b-8d58-40ff-bf90-bdef988a564acat-1.jpg"
+    },
+    {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\6d8d8ee6-0b7f-440f-bcc2-b5c080aa400ccourse-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\6d8d8ee6-0b7f-440f-bcc2-b5c080aa400ccourse-3.jpg"
     },
     {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\6e297196-c942-4c6b-aa32-51666912b223cat-1.jpg",
@@ -757,12 +781,20 @@
       "PackagePath": "staticwebassets\\assets\\img\\a1df74be-77f8-491d-8eae-6f1eb6952026cat-1.jpg"
     },
     {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\a26ceb76-3cf7-4573-91e1-c1a270f115a3carousel-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\a26ceb76-3cf7-4573-91e1-c1a270f115a3carousel-2.jpg"
+    },
+    {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\bf529d0c-5261-4f3f-8b61-c6495ea7cb98about.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\bf529d0c-5261-4f3f-8b61-c6495ea7cb98about.jpg"
     },
     {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\c0985df4-8b32-46f3-ab6e-1ad1c0d28e40cat-1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\c0985df4-8b32-46f3-ab6e-1ad1c0d28e40cat-1.jpg"
+    },
+    {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\c91f467b-30d8-44eb-b81a-50288a4462a1carousel-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\c91f467b-30d8-44eb-b81a-50288a4462a1carousel-1.jpg"
     },
     {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\carousel-1.jpg",
@@ -803,6 +835,10 @@
     {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\dbfa91e3-f9e5-47a3-8733-d5c9fb1c9878course-2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\dbfa91e3-f9e5-47a3-8733-d5c9fb1c9878course-2.jpg"
+    },
+    {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\dda8e286-b2eb-4a70-8b38-e67665b8190dcourse-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\dda8e286-b2eb-4a70-8b38-e67665b8190dcourse-2.jpg"
     },
     {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\de81f18a-0398-4f76-b466-abee30eb5a34course-1.jpg",

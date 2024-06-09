@@ -51,4 +51,17 @@
             },
         });
     });
+    $(document).on("click", "#course-table .delete-course-btn", function (event) {
+        event.preventDefault();
+        let button = $(this);
+        let id = parseInt(button.attr("data-id"));
+
+        $.ajax({
+            type: "POST",
+            url: `course/delete?id=${id}`,
+            success: function (response) {
+                button.closest('.course-data').remove();
+            },
+        });
+    });
 });
