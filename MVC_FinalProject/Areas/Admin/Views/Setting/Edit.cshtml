@@ -1,0 +1,29 @@
+﻿@model SettingEditVM
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container mt-5 d-flex">
+    <div>
+        <p>@Model.Key</p>
+    </div>
+    <form class="forms-sample" method="post" asp-action="Edit" enctype="multipart/form-data">
+        <div class="form-group">
+            <label class="float-label">Value</label>
+            <input asp-for="Value" class="form-control">
+            <span asp-validation-for="Value" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+        <a class="btn btn-light" asp-action="Index">Cancel</a>
+    </form>
+</div>
+
+<style>
+    .container p{
+        font-size:20px;
+        color: black;
+        border-block: 1px solid green;
+        margin-right: 100px;
+        margin-top: 30px;
+    }
+</style>

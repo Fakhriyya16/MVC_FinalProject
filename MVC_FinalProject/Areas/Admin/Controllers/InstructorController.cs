@@ -110,10 +110,10 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var instructorSocials = instructor?.InstructorSocials?.ToDictionary(
-                isocial => isocial.Social.Name,
-                isocial => isocial.SocialURL
-            ) ?? new Dictionary<string, string>();
+            var instructorSocials = instructor.InstructorSocials?
+                .GroupBy(isocial => isocial.Social.Name)
+                .ToDictionary(group => group.Key, group => group.First().SocialURL)
+                ?? new Dictionary<string, string>();
 
             InstructorEditVM vm = new()
             {

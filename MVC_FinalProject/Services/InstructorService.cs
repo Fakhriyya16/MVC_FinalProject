@@ -60,9 +60,9 @@ namespace MVC_FinalProject.Services
                 instructor.Image = fileName;
             }
 
-            await _socialService.UpdateSocialLink(instructor, "Instagram", request.Instagram);
-            await _socialService.UpdateSocialLink(instructor, "Facebook", request.Facebook);
-            await _socialService.UpdateSocialLink(instructor, "Twitter", request.Twitter);
+            await _socialService.UpdateSocialLinks(instructor, request);
+            await _socialService.UpdateSocialLinks(instructor, request);
+            await _socialService.UpdateSocialLinks(instructor, request);
 
             _context.Instructors.Update(instructor);
             await _context.SaveChangesAsync();
@@ -90,13 +90,27 @@ namespace MVC_FinalProject.Services
 
         public async Task<List<InstructorVM>> GetAllVM()
         {
-            var data = await _context.Instructors.ToListAsync();
+            var data = await _context.Instructors
+                .Include(m => m.InstructorSocials)
+                .ThenInclude(m => m.Social)
+                .ToListAsync();
 
-            List<InstructorVM> result = data.Select(m => new InstructorVM
+            List<InstructorVM> result = data.Select(m =>
             {
-                Name = m.FullName,
-                Image = m.Image,
-                Position = m.Position,
+                var instructorSocials = m.InstructorSocials
+                    .GroupBy(isocial => isocial.Social.Name)
+                    .Select(group => group.First())
+                    .ToDictionary(isocial => isocial.Social.Name, isocial => isocial.SocialURL);
+
+                return new InstructorVM
+                {
+                    Name = m.FullName,
+                    Image = m.Image,
+                    Position = m.Position,
+                    Instagram = instructorSocials.ContainsKey("Instagram") ? instructorSocials["Instagram"] : null,
+                    Facebook = instructorSocials.ContainsKey("Facebook") ? instructorSocials["Facebook"] : null,
+                    Twitter = instructorSocials.ContainsKey("Twitter") ? instructorSocials["Twitter"] : null
+                };
             }).ToList();
 
             return result;
@@ -104,7 +118,7 @@ namespace MVC_FinalProject.Services
 
         public async Task<Instructor> GetById(int id)
         {
-            return await _context.Instructors.Include(m=>m.Courses).FirstOrDefaultAsync(m=>m.Id == id);
+            return await _context.Instructors.Include(m=>m.Courses).Include(m=>m.InstructorSocials).ThenInclude(m=>m.Social).FirstOrDefaultAsync(m=>m.Id == id);
         }
 
         public async Task<InstructorDetailVM> GetInstructorDetailVM(int id)

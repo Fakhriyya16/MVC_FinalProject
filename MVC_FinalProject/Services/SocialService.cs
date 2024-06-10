@@ -2,6 +2,7 @@
 using MVC_FinalProject.Data;
 using MVC_FinalProject.Models;
 using MVC_FinalProject.Services.Interfaces;
+using MVC_FinalProject.ViewModels.Instructors;
 
 namespace MVC_FinalProject.Services
 {
@@ -28,51 +29,63 @@ namespace MVC_FinalProject.Services
                 Instructor = instructor
             };
 
-            instructor.InstructorSocials ??= new List<InstructorSocial>(); // Ensure the collection is initialized
+            instructor.InstructorSocials ??= new List<InstructorSocial>();
             instructor.InstructorSocials.Add(instructorSocial);
         }
 
-        public async Task UpdateSocialLink(Instructor instructor, string socialName, string socialUrl)
+        public async Task UpdateSocialLinks(Instructor instructor, InstructorEditVM request)
         {
-            if (instructor == null)
+            if (request == null || instructor == null)
             {
                 return;
             }
 
-            var instructorSocial = instructor.InstructorSocials
-                ?.FirstOrDefault(isocial => isocial.Social.Name == socialName);
+            await UpdateOrAddSocialLink(instructor, "Instagram", request.Instagram);
+            await UpdateOrAddSocialLink(instructor, "Facebook", request.Facebook);
+            await UpdateOrAddSocialLink(instructor, "Twitter", request.Twitter);
 
+            _appDbContext.Instructors.Update(instructor);
+            await _appDbContext.SaveChangesAsync();
+        }
+
+        public async Task UpdateOrAddSocialLink(Instructor instructor, string socialName, string socialUrl)
+        {
             if (string.IsNullOrWhiteSpace(socialUrl))
             {
-                if (instructorSocial != null)
+                var existingSocialLink = instructor.InstructorSocials
+                    .FirstOrDefault(isocial => isocial.Social.Name == socialName);
+
+                if (existingSocialLink != null)
                 {
-                    _appDbContext.InstructorSocials.Remove(instructorSocial);
+                    _appDbContext.InstructorSocials.Remove(existingSocialLink);
                 }
             }
             else
             {
-                if (instructorSocial != null)
+                var existingSocialLink = instructor.InstructorSocials
+                    .FirstOrDefault(isocial => isocial.Social.Name == socialName);
+
+                if (existingSocialLink != null)
                 {
-                    instructorSocial.SocialURL = socialUrl;
+                    existingSocialLink.SocialURL = socialUrl;
                 }
                 else
                 {
-                    Social social = await GetOrCreateSocialByName(socialName);
-                    instructorSocial = new InstructorSocial
+                    var social = await GetOrCreateSocialByName(socialName);
+                    var newSocialLink = new InstructorSocial
                     {
                         Social = social,
                         SocialURL = socialUrl,
                         Instructor = instructor
                     };
-                    instructor.InstructorSocials ??= new List<InstructorSocial>(); // Ensure the collection is initialized
-                    instructor.InstructorSocials.Add(instructorSocial);
+                    instructor.InstructorSocials.Add(newSocialLink);
                 }
             }
         }
 
         public async Task<Social> GetOrCreateSocialByName(string name)
         {
-            Social social = await _appDbContext.Socials.FirstOrDefaultAsync(s => s.Name == name);
+            var social = await _appDbContext.Socials.FirstOrDefaultAsync(s => s.Name == name);
             if (social == null)
             {
                 social = new Social { Name = name };
@@ -81,5 +94,6 @@ namespace MVC_FinalProject.Services
             }
             return social;
         }
+
     }
 }
