@@ -21,6 +21,7 @@ namespace MVC_FinalProject.Data
         public DbSet<Setting> Settings { get; set; }
         public DbSet<Social> Socials { get; set; }
         public DbSet<Student> Students { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -32,6 +33,7 @@ namespace MVC_FinalProject.Data
             builder.Entity<Setting>().HasQueryFilter(m => !m.SoftDeleted);
             builder.Entity<Social>().HasQueryFilter(m => !m.SoftDeleted);
             builder.Entity<Student>().HasQueryFilter(m => !m.SoftDeleted);
+            builder.Entity<Contact>().HasQueryFilter(m => !m.SoftDeleted);
             base.OnModelCreating(builder);
         }
     }

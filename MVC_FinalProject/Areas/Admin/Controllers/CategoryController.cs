@@ -77,14 +77,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         {
             if(id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var category = await _categoryService.GetById((int) id);
 
             if(category == null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             CategoryDetailVM vm = new()
@@ -103,14 +103,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         {
             if (id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var category = await _categoryService.GetById((int)id);
 
             if (category == null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             CategoryEditVM vm = new()
@@ -132,14 +132,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
 
             if (id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var category = await _categoryService.GetById((int)id);
 
             if (category == null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             await _categoryService.Edit(category, request);
@@ -151,14 +151,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         {
             if (id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var category = await _categoryService.GetById((int)id);
 
             if (category == null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             await _categoryService.Delete(category);

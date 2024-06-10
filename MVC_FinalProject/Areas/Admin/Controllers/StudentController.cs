@@ -34,12 +34,12 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         {
             if (id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
             var student = await _studentService.GetById((int)id);
             if (student is null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             StudentDetailVM model = new()
@@ -107,14 +107,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
             ViewBag.Courses = new SelectList(courses, "Id", "Name");
             if (id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var student = await _studentService.GetById((int)id);
 
             if (student == null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             StudentEditVM vm = new()
@@ -134,14 +134,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
             ViewBag.Courses = new SelectList(courses, "Id", "Name");
             if (id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var student = await _studentService.GetById((int)id);
 
             if (student == null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             if (!ModelState.IsValid)
@@ -158,14 +158,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         {
             if (id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var student = await _studentService.GetById((int)id);
 
             if (student == null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             await _studentService.Delete(student);

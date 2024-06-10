@@ -27,12 +27,8 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             ViewBag.AboutCount = await _aboutService.GetCount();
-            if(await _aboutService.GetAllForDetailVM() is null)
+            if (await _aboutService.GetAllForDetailVM() is null)
             {
-                //AboutDetailVM vm = new()
-                //{
-
-                //}
                 return View();
             }
             return View(await _aboutService.GetAllForDetailVM());
@@ -43,14 +39,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         {
             if (id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var about = await _aboutService.GetById((int)id);
 
             if (about is null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             AboutEditVM model = new()
@@ -68,14 +64,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         {
             if (id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var about = await _aboutService.GetById((int)id);
 
             if (about is null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             if (!ModelState.IsValid)
@@ -135,14 +131,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         {
             if (id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var about = await _aboutService.GetById((int)id);
 
             if (about is null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             await _aboutService.Delete(about);

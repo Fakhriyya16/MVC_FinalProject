@@ -35,12 +35,12 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         {
             if (id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
             var instructor = await _instructorService.GetInstructorDetailVM((int)id);
             if (instructor is null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
             return View(await _instructorService.GetInstructorDetailVM((int)id));
         }
@@ -102,14 +102,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         {
             if (id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var instructor = await _instructorService.GetById((int)id);
 
             if (instructor == null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             var instructorSocials = instructor.InstructorSocials?
@@ -136,14 +136,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         {
             if (id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var instructor = await _instructorService.GetById((int)id);
 
             if (instructor == null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             if (!ModelState.IsValid)
@@ -160,14 +160,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         {
             if (id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var instructor = await _instructorService.GetById((int)id);
 
             if (instructor == null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             await _instructorService.Delete(instructor);

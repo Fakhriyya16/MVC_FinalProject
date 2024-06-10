@@ -276,6 +276,37 @@ namespace MVC_FinalProject.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("MVC_FinalProject.Models.Contact", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Message")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("SoftDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Subject")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Contacts");
+                });
+
             modelBuilder.Entity("MVC_FinalProject.Models.Course", b =>
                 {
                     b.Property<int>("Id")
@@ -687,13 +718,13 @@ namespace MVC_FinalProject.Migrations
             modelBuilder.Entity("MVC_FinalProject.Models.InstructorSocial", b =>
                 {
                     b.HasOne("MVC_FinalProject.Models.Instructor", "Instructor")
-                        .WithMany()
+                        .WithMany("InstructorSocials")
                         .HasForeignKey("InstructorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("MVC_FinalProject.Models.Social", "Social")
-                        .WithMany()
+                        .WithMany("InstructorSocials")
                         .HasForeignKey("SocialId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -723,6 +754,13 @@ namespace MVC_FinalProject.Migrations
             modelBuilder.Entity("MVC_FinalProject.Models.Instructor", b =>
                 {
                     b.Navigation("Courses");
+
+                    b.Navigation("InstructorSocials");
+                });
+
+            modelBuilder.Entity("MVC_FinalProject.Models.Social", b =>
+                {
+                    b.Navigation("InstructorSocials");
                 });
 
             modelBuilder.Entity("MVC_FinalProject.Models.Student", b =>

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MVC_FinalProject.Data;
+using MVC_FinalProject.Helpers;
 using MVC_FinalProject.Models;
 using MVC_FinalProject.Services;
 using MVC_FinalProject.Services.Interfaces;
@@ -24,7 +25,11 @@ builder.Services.Configure<IdentityOptions>(opt =>
     opt.Password.RequireUppercase = true;
     opt.Password.RequireNonAlphanumeric = true;
     opt.User.RequireUniqueEmail = true;
+
+    opt.SignIn.RequireConfirmedEmail = true;
 });
+
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("Smtp"));
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -39,6 +44,8 @@ builder.Services.AddScoped<IInstructorService, InstructorService>();
 builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddScoped<ISocialService, SocialService>();
 builder.Services.AddScoped<ISettingService, SettingService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<IContactService, ContactService>();
 
 var app = builder.Build();
 

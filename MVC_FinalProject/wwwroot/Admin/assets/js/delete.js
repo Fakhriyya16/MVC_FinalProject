@@ -90,4 +90,17 @@
             },
         });
     });
+    $(document).on("click", "#contact-table .delete-contact-btn", function (event) {
+        event.preventDefault();
+        let button = $(this);
+        let id = parseInt(button.attr("data-id"));
+
+        $.ajax({
+            type: "POST",
+            url: `contact/delete?id=${id}`,
+            success: function (response) {
+                button.closest('.contact-data').remove();
+            },
+        });
+    });
 });

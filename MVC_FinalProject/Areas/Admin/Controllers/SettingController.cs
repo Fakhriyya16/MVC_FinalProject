@@ -25,14 +25,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
 
             if (id == null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var setting = await _settingService.GetById((int)id);
 
             if(setting == null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
             SettingEditVM vm = new()
             {
@@ -49,14 +49,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var setting = await _settingService.GetById((int)id);
 
             if (setting == null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             if (request.Value == null)

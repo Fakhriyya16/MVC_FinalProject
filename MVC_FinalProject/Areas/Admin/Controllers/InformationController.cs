@@ -69,14 +69,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
                     .ToListAsync();
             if (id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var info = await _informationService.GetById((int)id);
 
             if (info is null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             InformationEditVM model = new()
@@ -97,14 +97,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
                     .ToListAsync();
             if (id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var info = await _informationService.GetById((int)id);
 
             if (info is null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             if (!ModelState.IsValid)
@@ -122,14 +122,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         {
             if (id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var info = await _informationService.GetById((int)id);
 
             if (info is null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             await _informationService.Delete(info);

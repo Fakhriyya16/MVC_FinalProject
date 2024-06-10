@@ -108,14 +108,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         {
             if(id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var course = await _courseService.GetById((int)id);
 
             if(course is null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             return View(await _courseService.GetCourseForDetail((int)id));
@@ -126,14 +126,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         {
             if (id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var course = await _courseService.GetById((int)id);
 
             if (course is null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             await _courseService.Delete(course);
@@ -150,14 +150,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
             ViewBag.Instructors = new SelectList(instructors, "Id", "FullName");
             if (id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var course = await _courseService.GetById((int)id);
 
             if (course is null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             CourseEditVM vm = new()
@@ -186,14 +186,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
             ViewBag.Instructors = new SelectList(instructors, "Id", "FullName");
             if (id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var course = await _courseService.GetById((int)id);
 
             if (course is null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             if(!ModelState.IsValid)
@@ -208,11 +208,11 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> DeleteImage(int? id)
         {
-            if (id is null) return BadRequest();
+            if (id is null) return RedirectToAction("Index", "_404");
 
             var image = await _courseService.GetImageByIdAsync((int)id);
             
-            if (image is null) return NotFound();
+            if (image is null) return RedirectToAction("Index", "_404");
 
             string oldPath = Path.Combine(_env.WebRootPath, "assets/img", image.Name);
             if (System.IO.File.Exists(oldPath))
@@ -227,13 +227,13 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> MakeMain(int? id)
         {
-            if (id is null) return BadRequest();
+            if (id is null) return RedirectToAction("Index", "_404");
 
             var image = await _courseService.GetImageByIdAsync((int)id);
 
             var course = await _courseService.GetByIdWithImagesAsync(image.CourseId);
 
-            if (image is null) return NotFound();
+            if (image is null) return RedirectToAction("Index", "_404");
 
             if (course.CourseImages.Count == 0) return NotFound();
 

@@ -79,14 +79,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         {
             if(id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var slider = await _sliderService.GetById((int)id);
             
             if(slider is null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             SliderDetailVM model = new()
@@ -104,14 +104,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         {
             if (id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var slider = await _sliderService.GetById((int)id);
 
             if (slider is null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             await _sliderService.Delete(slider);
@@ -123,14 +123,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         {
             if (id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var slider = await _sliderService.GetById((int)id);
 
             if (slider is null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             SliderEditVM model = new()
@@ -148,14 +148,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         {
             if (id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "_404");
             }
 
             var slider = await _sliderService.GetById((int)id);
 
             if (slider is null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "_404");
             }
 
             if(!ModelState.IsValid)

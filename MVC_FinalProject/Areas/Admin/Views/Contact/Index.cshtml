@@ -1,0 +1,43 @@
+﻿@model List<ContactTableVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section id="contact-table">
+    <div class="container">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">FullName</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Message</th>
+                    <th scope="col">Send Date</th>
+                    <th scope="col">Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="contact-data">
+                        <td>@item.FullName</td>
+                        <td>@item.Email</td>
+                        <td>@item.Subject</td>
+                        <td>@item.Message</td>
+                        <td>@item.SendDate</td>
+                        <td>
+                            <form method="post" asp-controller="Contact" asp-action="Delete" asp-route-id="@item.Id">
+                                <button data-id="@item.Id" class="btn btn-danger btn-sm delete-contact-btn">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
+
+@section js {
+    <script src="~/Admin/assets/js/delete.js"></script>
+}
+
