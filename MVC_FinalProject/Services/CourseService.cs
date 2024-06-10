@@ -150,7 +150,7 @@ namespace MVC_FinalProject.Services
             await _context.SaveChangesAsync();
         }
 
-        public async Task<List<CourseVM>> GetAllVM()
+        public async Task<List<CourseVM>> GetAllSortedVM()
         {
             var data = await _context.Courses.Include(m => m.Instructor)
                                              .Include(m => m.CourseImages)
@@ -168,8 +168,8 @@ namespace MVC_FinalProject.Services
                 StudentCount = m.CourseStudents.Count
             }).ToList();
 
-
-            return result;
+            var sorted = result.OrderByDescending(m => m.Rating).Take(3).ToList();
+            return sorted;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ using MVC_FinalProject.ViewModels.Courses;
 namespace MVC_FinalProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
     public class CourseController : Controller
     {
         private readonly ICourseService _courseService;
@@ -162,7 +164,7 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
             {
                 Name = course.Name,
                 CategoryId = course.CategoryId,
-                InstructorId = course.InstructorId,
+                InstructorId = (int)course.InstructorId,
                 Images = course.CourseImages.ToList(),
                 Price = course.Price.ToString(course.Price % 1 == 0 ? "0" : "0,00"),
                 Rating = course.Rating,

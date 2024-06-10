@@ -737,6 +737,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\0da39967-2ea4-4604-a45c-f3cc18b55a1fcat-1.jpg"
     },
     {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\0fda6176-5d75-474a-acd9-41f523334953course-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\0fda6176-5d75-474a-acd9-41f523334953course-1.jpg"
+    },
+    {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\109999da-e831-45f6-8732-d0357e5b2115cat-4.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\109999da-e831-45f6-8732-d0357e5b2115cat-4.jpg"
     },
@@ -751,6 +755,10 @@
     {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\190f3346-5ed3-4d95-a876-f9d411f36c9fabout.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\190f3346-5ed3-4d95-a876-f9d411f36c9fabout.jpg"
+    },
+    {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\1c6516d0-d59c-4bed-953d-532a57baa688team-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\1c6516d0-d59c-4bed-953d-532a57baa688team-2.jpg"
     },
     {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\1d8e8a54-6b27-4e34-90d4-ef3b6cac0859team-4.jpg",
@@ -785,6 +793,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\307e0cbc-d889-4631-9c4e-d99bdb3a062bcourse-1.jpg"
     },
     {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\31b51c34-af26-4488-924b-4e051ef47741team-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\31b51c34-af26-4488-924b-4e051ef47741team-4.jpg"
+    },
+    {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\347dc9db-5c43-4daf-b6b7-3e1c6aa8c988about.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\347dc9db-5c43-4daf-b6b7-3e1c6aa8c988about.jpg"
     },
@@ -813,8 +825,16 @@
       "PackagePath": "staticwebassets\\assets\\img\\48ee34b1-9487-49f1-b48a-a3e770b733e9course-1.jpg"
     },
     {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\4aa4a645-09d1-49a3-9b04-f62c19c1a52ccourse-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\4aa4a645-09d1-49a3-9b04-f62c19c1a52ccourse-3.jpg"
+    },
+    {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\4b623583-4b4c-43fc-b126-0f159271dd21cat-3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\4b623583-4b4c-43fc-b126-0f159271dd21cat-3.jpg"
+    },
+    {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\589da130-6188-41ae-b7d1-541f4807a788course-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\589da130-6188-41ae-b7d1-541f4807a788course-2.jpg"
     },
     {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\68e10f2b-8d58-40ff-bf90-bdef988a564acat-1.jpg",
@@ -845,6 +865,14 @@
       "PackagePath": "staticwebassets\\assets\\img\\7b9a2b01-0e75-42d1-b6d9-35237d394191carousel-2.jpg"
     },
     {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\81802e67-79cd-4452-a31c-e38846c06e73about.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\81802e67-79cd-4452-a31c-e38846c06e73about.jpg"
+    },
+    {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\82c33533-ef81-4128-a1c9-f224b057be83about.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\82c33533-ef81-4128-a1c9-f224b057be83about.jpg"
+    },
+    {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\8725021c-c3b3-46e5-a3f0-50389cc804c8cat-2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\8725021c-c3b3-46e5-a3f0-50389cc804c8cat-2.jpg"
     },
@@ -871,6 +899,10 @@
     {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\ab0a6f65-e79a-49d4-b9a9-d6a2ecdb3bcfcourse-2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\ab0a6f65-e79a-49d4-b9a9-d6a2ecdb3bcfcourse-2.jpg"
+    },
+    {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\about.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\about.jpg"
     },
     {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\b5ec497f-1258-4866-b133-d94bfe122ae8team-3.jpg",
@@ -927,6 +959,18 @@
     {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\course-3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\course-3.jpg"
+    },
+    {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\d144fffc-f21c-4ec1-b436-483b75e82977team-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\d144fffc-f21c-4ec1-b436-483b75e82977team-2.jpg"
+    },
+    {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\d92e8c33-8200-4f85-9dd2-232bfc714c64cat-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\d92e8c33-8200-4f85-9dd2-232bfc714c64cat-4.jpg"
+    },
+    {
+      "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\d99416d5-5b71-4100-bf4d-f688ffdd82f5course-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\d99416d5-5b71-4100-bf4d-f688ffdd82f5course-2.jpg"
     },
     {
       "Id": "D:\\VS\\MVC_FinalProject\\MVC_FinalProject\\wwwroot\\assets\\img\\d9994b94-827f-4b75-9170-cf88fb1db5fecat-3.jpg",

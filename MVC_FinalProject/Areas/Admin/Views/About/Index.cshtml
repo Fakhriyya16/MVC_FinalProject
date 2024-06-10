@@ -20,21 +20,24 @@
                     <th scope="col">Operations</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr class="about-data">
-                    <th scope="row">@Model.Id</th>
-                    <td><img src="~/assets/img/@Model.Image" style="width:100px;height:100px;" /></td>
-                    <td>@Model.Heading</td>
-                    <td>@TruncateText(Model.Description, 10)</td>
-                    <td>@Model.CreatedDate</td>
-                    <td>
-                        <a type="button" asp-controller="About" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning btn-sm">Edit</a>
-                        <form method="post" asp-controller="About" asp-action="Delete" asp-route-id="@Model.Id">
-                            <button data-id="@Model.Id" class="btn btn-danger btn-sm delete-about-btn">Delete</button>
-                        </form>
-                    </td>
-                </tr>
-            </tbody>
+            @if(Model is not null)
+            {
+                <tbody>
+                    <tr class="about-data">
+                        <th scope="row">@Model.Id</th>
+                        <td><img src="~/assets/img/@Model.Image" style="width:100px;height:100px;" /></td>
+                        <td>@Model.Heading</td>
+                        <td>@TruncateText(Model.Description, 10)</td>
+                        <td>@Model.CreatedDate</td>
+                        <td>
+                            <a type="button" asp-controller="About" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning btn-sm">Edit</a>
+                            <form method="post" asp-controller="About" asp-action="Delete" asp-route-id="@Model.Id">
+                                <button data-id="@Model.Id" class="btn btn-danger btn-sm delete-about-btn">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            }
         </table>
     </div>
 </section>

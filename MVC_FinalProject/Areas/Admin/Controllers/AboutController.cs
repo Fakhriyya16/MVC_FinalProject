@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MVC_FinalProject.Data;
 using MVC_FinalProject.Models;
@@ -11,6 +12,7 @@ using MVC_FinalProject.ViewModels.Sliders;
 namespace MVC_FinalProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
     public class AboutController : Controller
     {
         private readonly IAboutService _aboutService;
@@ -25,6 +27,14 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             ViewBag.AboutCount = await _aboutService.GetCount();
+            if(await _aboutService.GetAllForDetailVM() is null)
+            {
+                //AboutDetailVM vm = new()
+                //{
+
+                //}
+                return View();
+            }
             return View(await _aboutService.GetAllForDetailVM());
         }
 

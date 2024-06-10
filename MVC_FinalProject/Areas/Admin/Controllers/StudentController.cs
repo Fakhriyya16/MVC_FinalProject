@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVC_FinalProject.Data;
@@ -11,6 +12,7 @@ using MVC_FinalProject.ViewModels.Students;
 namespace MVC_FinalProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
     public class StudentController : Controller
     {
         private readonly IStudentService _studentService;
@@ -54,7 +56,7 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            var courses = await _context.Courses.ToListAsync();
+            var courses = await _context.Courses.Where(m=>!m.SoftDeleted).ToListAsync();
             ViewBag.Courses = new SelectList(courses, "Id", "Name");
             return View();
         }
@@ -63,7 +65,7 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(StudentCreateVM request)
         {
-            var courses = await _context.Courses.Include(m=>m.CourseStudents).ToListAsync();
+            var courses = await _context.Courses.Where(m => !m.SoftDeleted).ToListAsync();
             ViewBag.Courses = new SelectList(courses, "Id", "Name");
             if (!ModelState.IsValid)
             {
@@ -101,7 +103,7 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int? id)
         {
-            var courses = await _context.Courses.ToListAsync();
+            var courses = await _context.Courses.Where(m => !m.SoftDeleted).ToListAsync();
             ViewBag.Courses = new SelectList(courses, "Id", "Name");
             if (id is null)
             {
@@ -128,7 +130,7 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int? id, StudentEditVM request)
         {
-            var courses = await _context.Courses.ToListAsync();
+            var courses = await _context.Courses.Where(m => !m.SoftDeleted).ToListAsync();
             ViewBag.Courses = new SelectList(courses, "Id", "Name");
             if (id is null)
             {

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MVC_FinalProject.Models;
 using MVC_FinalProject.Services;
 using MVC_FinalProject.Services.Interfaces;
@@ -7,6 +8,7 @@ using MVC_FinalProject.ViewModels.Categories;
 namespace MVC_FinalProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
     public class CategoryController : Controller
     {
         private readonly ICategoryService _categoryService;
@@ -123,6 +125,11 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int? id, CategoryEditVM request)
         {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
             if (id is null)
             {
                 return BadRequest();
@@ -133,11 +140,6 @@ namespace MVC_FinalProject.Areas.Admin.Controllers
             if (category == null)
             {
                 return NotFound();
-            }
-
-            if (!ModelState.IsValid)
-            {
-                return View();
             }
 
             await _categoryService.Edit(category, request);

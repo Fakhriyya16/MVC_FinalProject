@@ -1,0 +1,21 @@
+﻿@model UserRoleVM
+@{
+    ViewData["Title"] = "AddRole";
+}
+
+<section id="add-role">
+    <div class="d-flex">
+        <form method="post" asp-action="AddRole">
+            <div class="form-group mx-3">
+                <label class="float-label">User</label>
+                <select class="form-control" asp-for="Email" asp-items="@ViewBag.Usernames"></select>
+            </div>
+            <div class="form-group mx-3">
+                <label class="float-label">Add Role</label>
+                <select class="form-control" asp-for="Role" asp-items="@ViewBag.Roles"></select>
+            </div>
+            <button type="Submit" class="btn btn-success mx-3">Add role</button>
+        </form>
+    </div>
+</section>
+

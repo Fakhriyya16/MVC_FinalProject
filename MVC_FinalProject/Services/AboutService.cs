@@ -63,28 +63,36 @@ namespace MVC_FinalProject.Services
         {
             var data = await _appDbContext.Abouts.FirstOrDefaultAsync();
 
-            AboutDetailVM model = new()
+            if(data is not null)
             {
-                Id = data.Id,
-                Heading = data.Heading,
-                Description = data.Description,
-                Image = data.Image,
-                CreatedDate = data.CreatedDate.ToString("dd.MM.yyyy"),
-            };
-            return model;
+                AboutDetailVM model = new()
+                {
+                    Id = data.Id,
+                    Heading = data.Heading,
+                    Description = data.Description,
+                    Image = data.Image,
+                    CreatedDate = data.CreatedDate.ToString("dd.MM.yyyy"),
+                };
+                return model;
+            }
+            return null;
         }
 
         public async Task<AboutVM> GetAllVM()
         {
             var data = await _appDbContext.Abouts.FirstOrDefaultAsync();
 
-            AboutVM model = new()
+            if(data is not null)
             {
-                Heading = data.Heading,
-                Description = data.Description,
-                Image = data.Image,
-            };
-            return model;
+                AboutVM model = new()
+                {
+                    Heading = data.Heading,
+                    Description = data.Description,
+                    Image = data.Image,
+                };
+                return model;
+            }
+            return null;
         }
 
         public async Task<About> GetById(int id)

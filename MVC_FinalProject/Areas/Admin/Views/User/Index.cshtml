@@ -1,0 +1,30 @@
+﻿@model List<UserTableVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+@if (User.IsInRole("SuperAdmin"))
+{
+    <a asp-action="AddRole" class="btn btn-success text-white btn-sm">Add Role</a>
+}
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Full Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Roles</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.FullName</th>
+                <td>@item.Email</td>
+                <td>@item.Roles</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MVC_FinalProject.Data;
 using MVC_FinalProject.Models;
 using MVC_FinalProject.Services.Interfaces;
@@ -7,6 +8,7 @@ using MVC_FinalProject.ViewModels.Instructors;
 namespace MVC_FinalProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
     public class InstructorController : Controller
     {
         private readonly IInstructorService _instructorService;

@@ -40,11 +40,11 @@ namespace MVC_FinalProject.Controllers
             {
                 Sliders = await _sliderService.GetAllSlidersVM(),
                 Information = await _informationService.GetAllInfoVM(),
-                About = await _aboutService.GetAllVM(),
                 Categories = await _categoryService.GetAllVM(),
-                Courses = await _courseService.GetAllVM(),
+                Courses = await _courseService.GetAllSortedVM(),
                 Instructors = await _instructorService.GetAllVM(),
-                Students = await _studentService.GetAllVM()
+                Students = await _studentService.GetAllVM(),
+                About = await _aboutService.GetAllVM(),
             };
             return View(model);
         }

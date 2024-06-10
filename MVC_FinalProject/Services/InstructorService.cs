@@ -13,6 +13,7 @@ namespace MVC_FinalProject.Services
         private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _env;
         private readonly ISocialService _socialService;
+        private readonly ICourseService _courseService;
         public InstructorService(AppDbContext context, IWebHostEnvironment env, ISocialService socialService)
         {
             _context = context;
